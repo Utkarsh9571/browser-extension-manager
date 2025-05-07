@@ -1,0 +1,284 @@
+:root{
+    /*### Neutral*/
+
+    --Neutral-900: hsl(227, 75%, 14%);
+    --Neutral-800: hsl(226, 25%, 17%);
+    --Neutral-700: hsl(225, 23%, 24%);
+    --Neutral-600: hsl(226, 11%, 37%);
+    --Neutral-300: hsl(0, 0%, 78%);
+    --Neutral-200: hsl(217, 61%, 90%);
+    --Neutral-100: hsl(0, 0%, 93%);
+    --Neutral-0: hsl(200, 60%, 99%);
+
+/*### Red*/
+
+    --Red-400: hsl(3, 86%, 64%);
+    --Red-500: hsl(3, 71%, 56%);
+    --Red-700: hsl(3, 77%, 44%);
+
+/*### Gradient*/
+
+    --Light-Gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --Dark-Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    width: 100%;
+    font-family: "Noto Sans", serif;
+    padding: 2em 1em;
+    margin: 0;
+}
+body.dark, .container.dark{
+    background-image: linear-gradient(180deg, #040918 0%, #091540 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body.light, .container.light{
+    background-image: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    width: 100%;
+    min-height: fit-content;
+}
+.extension-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5em;
+    border-radius: 0.75em;
+}
+.logo-dark{
+    display: block;
+}
+.logo-light{
+    display: none;
+}
+.extension-header.dark{
+    background-color: var(--Neutral-800);
+}
+.extension-header.light{
+    background-color: var(--Neutral-0);
+}
+.icon-moon{
+    display: none;
+    background-color: var(--Neutral-100);
+    width: 3.25em;
+    padding: 0.9em;
+    border-radius: 0.75em;
+}
+.icon-moon:hover{
+    cursor: pointer;
+    background-color: var(--Neutral-300);
+}
+.icon-sun{
+    display: block;
+    background-color: var(--Neutral-700);
+    width: 3.25em;
+    padding: 0.9em;
+    border-radius: 0.75em;
+}
+.icon-sun:hover{
+    cursor: pointer;
+    background-color: var(--Neutral-600);
+}
+.activity-toggle{
+    display: block;
+    justify-items: center;
+    margin: 2em auto;
+}
+.activity-toggle h1{
+    color: var(--Neutral-0);
+    font-size: 2em;
+    margin-bottom: 0.75em;
+}
+.activity-toggle.dark h1{
+    color: var(--Neutral-0);
+}
+.activity-toggle.light h1{
+    color: var(--Neutral-900);
+}
+.visibility{
+    display: flex;
+    gap: 0.75em;
+    margin: 1em 0;
+}
+.toggle-options{
+    font-size: 1.3em;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+}
+.toggle-options.dark{
+    background-color: var(--Neutral-700);
+    color: var(--Neutral-0);
+    border: 1px solid var(--Neutral-600);
+}
+.toggle-options.dark:hover{
+    cursor: pointer;
+    background-color: hsla(226, 11%, 37%, 0.75);
+    border: 1px solid hsla(226, 11%, 37%, 0.75);
+}
+.active-dark{
+    background-color: hsl(3, 71%, 56%) !important;
+    color: var(--Neutral-900) !important;
+    border: 1px solid hsl(3, 71%, 56%) !important;
+}
+.active-dark:hover{
+    cursor: pointer;
+    background-color: var(--Red-400) !important;
+    color: var(--Neutral-900) !important;
+    border: 1px solid var(--Red-400) !important ;
+}
+
+.toggle-options.light{
+    background-color: var(--Neutral-0);
+    color: var(--Neutral-900);
+    border: 1px solid var(--Neutral-200);
+}
+.toggle-options.light:hover{
+    cursor: pointer;
+    background-color: hsla(217, 61%, 90%, 0.1);
+    border: 1px solid hsla(217, 61%, 90%, 0.75);
+}
+.active-light{
+    background-color: hsl(3, 71%, 56%) !important;
+    color: var(--Neutral-0) !important;
+    border: 1px solid hsl(3, 71%, 56%) !important;
+}
+.active-light:hover{
+    cursor: pointer;
+    background-color: var(--Red-400) !important ;
+    color: var(--Neutral-0) !important;
+    border: 1px solid var(--Red-400) !important;
+}
+
+.extension-grid{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+.extension-list{
+    border-radius: 1em;
+    padding: 1.25em;
+}
+.extension-list.dark{
+    background-color: var(--Neutral-800);
+    border: 1px solid var(--Neutral-600);
+}
+.extension-list.light{
+    background-color: var(--Neutral-0);
+    border: 1px solid var(--Neutral-200);
+}
+.extension-list header{
+    display: flex;
+    align-items: start;
+    gap: 1.25em;
+    font-size: 1em;
+}
+.extension-list.dark header{
+    color: var(--Neutral-100);
+}
+.extension-list.light header{
+    color: var(--Neutral-900);
+}
+.info p{
+    font-size: 1em;
+    margin-top: 5px;
+    margin: 1em 0;
+}
+.info.dark p{
+    color: var(--Neutral-300);
+}
+.info.light p{
+    color: var(--Neutral-900);
+}
+.extension-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
+.remove{
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+}
+.remove.dark{
+    color: var(--Neutral-0);
+    border: 1px solid var(--Neutral-600);
+}
+.remove.dark:hover{
+    cursor: pointer;
+    color: var(--Neutral-900);
+    background-color: var(--Red-400);
+}
+.remove.light{
+    color: var(--Neutral-900);
+    border: 1px solid var(--Neutral-300);
+}
+.remove.light:hover{
+    cursor: pointer;
+    color: var(--Neutral-0);
+    background-color: var(--Red-700);
+}
+.toggle-button{
+    width: 2.85em;
+    height: 1.65em;
+    border-radius: 1em;
+    background-color: var(--Red-400);
+    align-content: center;
+    justify-items: start;
+    padding: 3.5px;
+    cursor: pointer;
+}
+.white-ball{
+    width: 1.15em;
+    height: 1.15em;
+    border-radius: 1em;
+    background-color: var(--Neutral-0);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+@media screen and (min-width: 550px) {
+    .extension-grid{
+        grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+        min-height: 51em;
+    }
+    .activity-toggle{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .activity-toggle h1{
+        margin-bottom: 0;
+    }
+    
+}
+@media screen and (min-width: 1000px) {
+    .extension-grid{
+        grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+        max-width: 60em;
+        gap: 1.5em;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .extension-grid{
+        grid-template-columns: repeat(auto-fit, minmax(23em, 1fr));
+        max-width: 90em;
+        gap: 2em;
+    }
+}
